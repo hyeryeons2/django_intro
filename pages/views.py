@@ -18,12 +18,40 @@ def introduce(request):
     return render(request, 'introduce.html')
 
 
-# template variable example    
-def dinner(request):
+# template variable example
+# Variable routin'으로 'name' 을 받아서 context에 'name' 도 함께 넣는다.
+# dinner.html에서 'name' 님의 저녁식사는 'pick' 입니다로 출력하기   
+def dinner(request, name):
     menu = ['강남 더막창스', '노랑통닭', '양자강']
     pick = random.choice(menu)  # dinner라고 동일한 이름으로 함수를 지정하는 경우, name space없음
     context = {
         'pick': pick,
+        'name': name,
     }
     # Django template로 context를 보낸다(전달)
     return render(request, 'dinner.html', context)
+
+
+def image(request):
+    image_url = 'https://picsum.photos/700'
+    context = {
+        'image_url': image_url,
+    }
+    return render(request, 'image.html', context)
+
+# greeting/name/으로 됨
+def greeting(request, name):  # url에서 받은 다양한 변수 받는 것 request 뒤에 name
+    context = {
+        'name': name,
+    }
+    return render(request, 'greeting.html', context)
+
+
+def times(request, num1, num2):
+    result = num1 * num2
+    context = {
+        'result': result,
+        'num1': num1,
+        'num2': num2,
+    }
+    return render(request, 'times.html', context)
