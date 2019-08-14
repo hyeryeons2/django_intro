@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from datetime import datetime
 import random
 
 # Create your views here.
@@ -55,3 +56,33 @@ def times(request, num1, num2):
         'num2': num2,
     }
     return render(request, 'times.html', context)
+
+
+def template_language(request):
+    menus = ['짜장면', '탕수육', '짬뽕', '양장피']
+    my_sentence = 'Life is short, you need python'
+    messages = ['apple', 'banana', 'cucumber', 'mango']
+    datetimenow = datetime.now()
+    empty_list = []
+    context = {
+        'menus': menus,
+        'my_sentence': my_sentence,
+        'messages': messages,
+        'datetimenow': datetimenow,
+        'empty_list': empty_list,
+    }
+    return render(request, 'template_language.html', context)
+
+
+def info(request):
+    return render(request, 'info.html')
+
+
+def student(request, name):
+    age = 28
+    context = {
+        'name': name,
+        'age': age,
+    }
+
+    return render(request, 'student.html', context)
