@@ -86,3 +86,25 @@ def student(request, name):
     }
 
     return render(request, 'student.html', context)
+
+def b_day(request):
+    # tday = datetime.now()
+    # if tday.month == 10 and today.day == 15:
+    #     result = '예'
+    # else:
+    #     result = '노' 
+
+    # context = {
+    #     'result': result,
+    # }
+    # return render(request, 'b_day.html', context)
+    return render(request, 'b_day.html')
+
+def lotto(request):
+    real_lotto = [21, 25, 30, 32, 40, 42]
+    lotto = sorted(random.sample(range(1, 45), 6))
+    context = {
+        'real_lotto': real_lotto,
+        'lotto': lotto,
+    }
+    return render(request, 'lotto.html', context)

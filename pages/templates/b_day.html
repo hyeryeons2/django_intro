@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Birthday</title>
+</head>
+<body>
+  {% now "m" as month %}
+  {% now "d" as day %}
+  {% comment %} <p>{{ month }}  {{ day }}</p> {% endcomment %}
+  {% comment %} 출력값은 0으로 시작하니까 int가 아닌 str임 {% endcomment %}
+
+  {% if month == '08' and day == '17' %}
+    <h2>YES!</h2>
+  {% else %}
+    <h2>NO!</h2>
+  {% endif %}
+
+</body>
+</html>
