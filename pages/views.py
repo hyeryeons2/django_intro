@@ -84,8 +84,8 @@ def student(request, name):
         'name': name,
         'age': age,
     }
-
     return render(request, 'student.html', context)
+
 
 def b_day(request):
     # tday = datetime.now()
@@ -100,6 +100,7 @@ def b_day(request):
     # return render(request, 'b_day.html', context)
     return render(request, 'b_day.html')
 
+
 def lotto(request):
     real_lotto = [21, 25, 30, 32, 40, 42]
     lotto = sorted(random.sample(range(1, 45), 6))
@@ -108,3 +109,36 @@ def lotto(request):
         'lotto': lotto,
     }
     return render(request, 'lotto.html', context)
+
+
+def search(request):
+    return render(request, 'search.html')
+
+
+def result(request):
+    # request.GET.get을 쓰는 이유? 예를 들어 회원가입의 경우, 이름, 성별, 나이 등 여러가지 정보가
+    # 입력되는데 이름, 성별, 나이 등 각각의 항목을 각각 처리하고자 사용하는 방식
+    # <QueryDict: {'query': ['안녕!']}>
+    query = request.GET.get('query')  # get을 할 때에는 페이지 두개 쓸 때 필요한거
+    category = request.GET.get('category')
+    context = {
+        'query': query,
+        'category': category,
+    }
+    return render(request, 'result.html', context)
+
+
+def lotto_pick(request):  # html 파일에서 input 값(form)에서 받겠다.
+    return render(request, 'lotto_pick.html')
+
+
+def lotto_result(request):
+    pick_lotto = request.GET.get('pick_lotto')  # lotto_pick에서 받은 번호를 가져온다
+    pick_lotto = list(map(int, pick_lotto.split()))  # 받은 번호를 스플릿해서 list로 만든다
+
+    result_lotto = [21, 25, 30, 32, 40, 42]  
+    context = {
+        'pick_lotto': pick_lotto,
+        'result_lotto': result_lotto,
+    }
+    return render(request, 'lotto_result.html', context)
