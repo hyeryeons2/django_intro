@@ -142,3 +142,7 @@ def lotto_result(request):
         'result_lotto': result_lotto,
     }
     return render(request, 'lotto_result.html', context)
+
+
+def static_example(request):
+    return render(request, 'static_example.html')

@@ -24,6 +24,9 @@ from pages import views  # pages라는 app에서 views를 가져온다
 # www.ssafy.com/login/ 쳤을 때, login 페이지가 없기 때문에 페이지가 뜨지 않음
 # 따라서 urlpatterns에서 path('admin/', admin.site.urls)를 추가하면 login 쳤을 때 login 페이지로 이동
 urlpatterns = [
+    # 사용자가 접속하는 경로
+    path('static_example', views.static_example),
+
     path('lotto_result/', views.lotto_result),
     path('lotto_pick/', views.lotto_pick),
     

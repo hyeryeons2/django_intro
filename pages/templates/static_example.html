@@ -1,0 +1,21 @@
+{% comment %} 각 어플리케이션의 static에 대한 주소(경로)를 생성 (why? 주소가 있어야 주소를 참조할 수 있음) {% endcomment %}
+{% comment %} staticfile을 사용하기 위해서는 load + tab을 해야함 {% endcomment %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Static example</title>
+  <link rel="stylesheet" href="{% static 'style_sheets/example.css' %}">
+</head>
+<body>
+  <h1>static 파일 실습</h1>
+  <h2>'감사'합니다</h2>
+  <img src="{% static 'images/ryujehong.png' %}" alt="ryujehong">
+  {% comment %} static 후 tab 하고 두번째꺼 클릭 {% endcomment %}
+</body>
+</html>
