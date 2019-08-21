@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # local apps(우리가 만드는 apps; 가장 상단에 둠, 가장 우선순위가 높음)
     'pages', # ★★반드시 이렇게 해줘야 됨★★(pages 만들었다고 출생신고하는 격)
-
+    'utilities',
     # 3rd party apps; 장고에서 다른데서 만든 것들을 쓸 때
 
     # django 기본 apps
