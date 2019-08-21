@@ -12,11 +12,11 @@ import random
 # 사용자에게 어떤 페이지를 보여줄 지 view 함수를 선언해준다.
 # 요청이 들어오면 index.html을 찾아서 보여준다(어디서? pages>templates>에서 찾음)
 def index(request):         # 첫 인자는 반드시 request -> 사용자가 보내는 요청에 대한 정보
-    return render(request, 'index.html')  # render의 첫 인자도 반드시 request(위에서 받은 request), 페이지 이름
+    return render(request, 'pages/index.html')  # render의 첫 인자도 반드시 request(위에서 받은 request), 페이지 이름
 
 
 def introduce(request):
-    return render(request, 'introduce.html')
+    return render(request, 'pages/introduce.html')
 
 
 # template variable example
@@ -30,7 +30,7 @@ def dinner(request, name):
         'name': name,
     }
     # Django template로 context를 보낸다(전달)
-    return render(request, 'dinner.html', context)
+    return render(request, 'pages/dinner.html', context)
 
 
 def image(request):
@@ -38,14 +38,14 @@ def image(request):
     context = {
         'image_url': image_url,
     }
-    return render(request, 'image.html', context)
+    return render(request, 'pages/image.html', context)
 
 # greeting/name/으로 됨
 def greeting(request, name):  # url에서 받은 다양한 변수 받는 것 request 뒤에 name
     context = {
         'name': name,
     }
-    return render(request, 'greeting.html', context)
+    return render(request, 'pages/greeting.html', context)
 
 
 def times(request, num1, num2):
@@ -55,7 +55,7 @@ def times(request, num1, num2):
         'num1': num1,
         'num2': num2,
     }
-    return render(request, 'times.html', context)
+    return render(request, 'pages/times.html', context)
 
 
 def template_language(request):
@@ -71,11 +71,11 @@ def template_language(request):
         'datetimenow': datetimenow,
         'empty_list': empty_list,
     }
-    return render(request, 'template_language.html', context)
+    return render(request, 'pages/template_language.html', context)
 
 
 def info(request):
-    return render(request, 'info.html')
+    return render(request, 'pages/info.html')
 
 
 def student(request, name):
@@ -84,7 +84,7 @@ def student(request, name):
         'name': name,
         'age': age,
     }
-    return render(request, 'student.html', context)
+    return render(request, 'pages/student.html', context)
 
 
 def b_day(request):
@@ -98,7 +98,7 @@ def b_day(request):
     #     'result': result,
     # }
     # return render(request, 'b_day.html', context)
-    return render(request, 'b_day.html')
+    return render(request, 'pages/b_day.html')
 
 
 def lotto(request):
@@ -108,11 +108,11 @@ def lotto(request):
         'real_lotto': real_lotto,
         'lotto': lotto,
     }
-    return render(request, 'lotto.html', context)
+    return render(request, 'pages/lotto.html', context)
 
 
 def search(request):
-    return render(request, 'search.html')
+    return render(request, 'pages/search.html')
 
 
 def result(request):
@@ -125,11 +125,11 @@ def result(request):
         'query': query,
         'category': category,
     }
-    return render(request, 'result.html', context)
+    return render(request, 'pages/result.html', context)
 
 
 def lotto_pick(request):  # html 파일에서 input 값(form)에서 받겠다.
-    return render(request, 'lotto_pick.html')
+    return render(request, 'pages/lotto_pick.html')
 
 
 def lotto_result(request):
@@ -141,15 +141,15 @@ def lotto_result(request):
         'pick_lotto': pick_lotto,
         'result_lotto': result_lotto,
     }
-    return render(request, 'lotto_result.html', context)
+    return render(request, 'pages/lotto_result.html', context)
 
 
 def static_example(request):
-    return render(request, 'static_example.html')
+    return render(request, 'pages/static_example.html')
 
 
 def num_push(request):
-    return render(request, 'num_push.html')
+    return render(request, 'pages/num_push.html')
 
 
 def pull(request):
@@ -157,4 +157,4 @@ def pull(request):
     context = {
         'num': num,
     }
-    return render(request, 'pull.html', context)
+    return render(request, 'pages/pull.html', context)
