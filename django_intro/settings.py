@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# bask_dir은 프로젝트 최상단을 가리킴
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -60,7 +60,10 @@ ROOT_URLCONF = 'django_intro.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # app_dirs 외의 templates 폴더들은 dirs에...
+        # base_dir에서 django_intro의 templates을 불러오고 인식할 수 있다.
+        'DIRS': [os.path.join(BASE_DIR, 'django_intro', 'templates')],
+        # application 안에 있는 templates 폴더들은 기본적으로 인식한다(True)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
