@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):         
     return render(request, 'utilities/index.html')
+
+def image(request):
+    return render(request, 'utilities/image.html')

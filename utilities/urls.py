@@ -5,4 +5,5 @@ from . import views
 # /utilities/'이후의 url'
 urlpatterns = [
     path('index/', views.index),
+    path('image/', views.image),
 ]

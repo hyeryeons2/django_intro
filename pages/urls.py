@@ -6,6 +6,8 @@ from . import views
 
 urlpatterns = [
     # 기존에 pages에 있던 url 옮겨오기!
+    path('two/', views.two),
+    path('one/', views.one),
     path('num/pull/', views.pull),
     path('num/push/', views.num_push),
 
